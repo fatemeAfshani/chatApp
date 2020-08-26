@@ -126,4 +126,5 @@ socket.emit('join' , {username, room}, (error) =>{
         //if an error accours we should send the user to the join page again 
         location.href = '/'
     }
+    
 })
