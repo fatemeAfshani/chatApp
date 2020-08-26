@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
         socket.join(user.room)
         socket.emit('message', generateMessage('admin',`Dear ${user.username} !  Welcome to Chat App`))
         //socket.broadcast() send the message to everyone that are on the specific room  except the user who own socket object 
-        socket.broadcast.to(user.room).emit('admin','message', generateMessage(`${user.username} is joined the chat`))
+        socket.broadcast.to(user.room).emit('message', generateMessage('admin',`${user.username} is joined the chat`))
 
         io.to(user.room).emit('usersList', {
             room: user.room,
